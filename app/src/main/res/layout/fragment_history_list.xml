@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:name="com.starglare.accasy.fragments.HistoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager"
+            tools:context="com.starglare.accasy.fragments.HistoryFragment"
+            tools:listitem="@layout/fragment_history" />
+    </LinearLayout>
+    <com.mapbox.mapboxsdk.maps.MapView xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/historyMap"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        mapbox:mapbox_cameraTargetLat="9.071798"
+        mapbox:mapbox_cameraTargetLng="7.486378"
+        mapbox:mapbox_cameraZoom="15" />
+</LinearLayout>

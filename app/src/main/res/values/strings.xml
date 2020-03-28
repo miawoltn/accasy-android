@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Accasy</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_report">Report</string>
+    <string name="title_history">History</string>
+    <string name="title_feedback">Feedback</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <array name="category">
+        <item>Street</item>
+        <item>Utility</item>
+    </array>
+    <array name="cat_street">
+        <item>Street_light</item>
+        <item>Pothole</item>
+        <item>Traffic_light</item>
+    </array>
+    <array name="cat_utility">
+        <item>Water_pipe</item>
+        <item>Electric_cable</item>
+        <item>Transformer</item>
+    </array>
+    
+    <string name="water_supply_facility">Water Supply Facility</string>
+    <string name="transport_infrastructure">Transport Infrastructure</string>
+    <string name="energy_infrastructure">Energy infrastructure</string>
+
+    <string name="water_supply_facility_tag">cat_wsf</string>
+    <string name="transport_infrastructure_tag">cat_ti</string>
+    <string name="energy_infrastructure_tag">cat_ei</string>
+
+
+    <array name="wsf">
+        <item>Leaking Pipes</item>
+        <item>Inadequate Water Supply</item>
+        <item>Other Challenge</item>
+    </array>
+
+    <array name="ti">
+        <item>Pothole/Damaged Road</item>
+        <item>Accident</item>
+        <item>Bridge Collapse</item>
+        <item>Heavy Traffic/ Gridlock</item>
+        <item>Dead Vehicle Obstructing Traffic</item>
+        <item>Other</item>
+    </array>
+
+    <array name="ei">
+        <item>Electric Poles Damage</item>
+        <item>Transformer</item>
+        <item>Street Lights</item>
+        <item>Other</item>
+    </array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="permissionTitle">Permission</string>
+    <string name="permissionContent">Some permissions not granted. Will like to try again?</string>
+    <string name="permissionCancelText">No</string>
+    <string name="permissionConfirmText">Yes</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="nav_item_activity_titles">
+        <item>Report</item>
+        <item>Report Map</item>
+        <item>History</item>
+        <item>Feedback</item>
+    </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="host">https://accasy.herokuapp.com/</string>
+    <string name="endpoint">api/v1/fault</string>
+
+    <string name="localhost">http://192.168.0.33/accasy/public/</string>
+
+    <string name="feedback_text"><i><b>Help us improve Accasy by providing us with your valuable feedback. We assure you that we will look into it. Thank you.</b></i>
+    </string>
+    <string name="ping_host">https://www.google.com</string>
+    <string name="TOKEN">pk.eyJ1IjoibWlhd29sdG4iLCJhIjoiY2p3anNmMGkzMGE2bzRhcXBnYnlidHFpdCJ9._CryZMzXxMtUAk-xxziQ4w</string>
+    <string name="title_help">Help</string>
+
+</resources>

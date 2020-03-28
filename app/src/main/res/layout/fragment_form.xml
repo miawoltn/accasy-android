@@ -1,0 +1,411 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location:"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tap_to_update"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/selectedLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Location unknown"
+                    android:textSize="18sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap to update"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center" >
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/refresh"
+                    android:layout_width="50dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center|right|end"
+                    android:src="@drawable/load" />
+                <Button
+                    android:id="@+id/findme_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="Find me"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:orientation="horizontal"
+            android:weightSum="0.9">
+
+            <LinearLayout
+                android:id="@+id/wsf"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:focusable="true"
+                android:weightSum="1"
+                android:clickable="true">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="0.6"
+                    android:src="@drawable/ic_water_tap" />
+
+                <TextView
+                    android:id="@+id/street_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/water_supply_facility"
+                    android:tag="@string/water_supply_facility_tag"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ti"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:background="?attr/selectableItemBackgroundBorderless">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_marginBottom="10dp"
+                    android:scrollbars="horizontal"
+                    android:src="@drawable/ic_street_24px" />
+
+                <TextView
+                    android:id="@+id/traffic_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/transport_infrastructure"
+                    android:tag="@string/transport_infrastructure_tag"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ei"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:background="?attr/selectableItemBackgroundBorderless">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_lightning_electric_energy" />
+
+                <TextView
+                    android:id="@+id/cat_title_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:text="@string/energy_infrastructure"
+                    android:tag="@string/energy_infrastructure_tag"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/subcat_list"
+            app:layoutManager="LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            tools:context=".fragment.ReportMapFragment"
+            tools:listitem="@layout/cat_layout"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                card_view:cardCornerRadius="6dp">
+
+                <com.wrapp.floatlabelededittext.FloatLabeledEditText
+                    xmlns:float="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    float:fletPadding="10dp">
+
+                    <EditText
+                        android:id="@+id/comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:maxLength="256"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:hint="Enter comment here..." />
+                </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_6"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="0.3"
+                card_view:cardCornerRadius="6dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/photo_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_image_black_24dp"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_7"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="0.3"
+                card_view:cardCornerRadius="6dp"
+                android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/photo_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_image_black_24dp" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_8"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                card_view:cardCornerRadius="6dp"
+                android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/photo_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_image_black_24dp" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:layout_margin="15dp">
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent"
+                android:enabled="false"
+                android:text="Send"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+<!--<LinearLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:orientation="vertical"-->
+<!--xmlns:float="http://schemas.android.com/apk/res-auto"-->
+<!--android:background="@android:drawable/dialog_holo_light_frame"-->
+<!--tools:context="com.starglare.accasy.fragments.FormFragment">-->
+
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/colorAccent">-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/breadcrumb"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text=""-->
+        <!--android:textSize="24sp"-->
+        <!--android:visibility="gone" />-->
+<!--</LinearLayout>-->
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal">-->
+    <!--<com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="0.7"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginTop="20dp">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/coordinates"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:enabled="false"-->
+            <!--android:hint="Coordinates" />-->
+
+    <!--</com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
+    <!--<pl.droidsonroids.gif.GifImageView-->
+        <!--android:id="@+id/refresh"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="0.13"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:src="@drawable/load"/>-->
+<!--</LinearLayout>-->
+
+
+
+<!--&lt;!&ndash; add some padding &ndash;&gt;-->
+<!--<com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--float:fletPadding="10dp">-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/comment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="textMultiLine"-->
+        <!--android:maxLines="3"-->
+        <!--android:maxLength="256"-->
+        <!--android:hint="Comment" />-->
+<!--</com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
+
+
+<!--<com.wrapp.floatlabelededittext.FloatLabeledEditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--float:fletPadding="10dp">-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/phone_number"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="number"-->
+        <!--android:maxLength="13"-->
+        <!--android:hint="Phone Number" />-->
+<!--</com.wrapp.floatlabelededittext.FloatLabeledEditText>-->
+
+<!--<ImageView-->
+    <!--android:id="@+id/photo"-->
+    <!--android:layout_width="234dp"-->
+    <!--android:layout_height="198dp"-->
+    <!--android:src="@drawable/ic_menu_camera"-->
+    <!--android:layout_gravity="center"/>-->
+
+<!--<LinearLayout-->
+    <!--android:layout_width="209dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="@android:drawable/dialog_holo_light_frame"-->
+    <!--android:layout_margin="15dp">-->
+    <!--<Button-->
+        <!--android:id="@+id/submit"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:text="Send"/>-->
+<!--</LinearLayout>-->
+<!--</LinearLayout>-->
